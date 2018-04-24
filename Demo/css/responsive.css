@@ -207,7 +207,7 @@ header nav .login_btn:hover{
     width: 100%;
     height: 900px;
     position: relative;
-    background: url('../img/hero.jpg') no-repeat bottom center;
+    background: url('../img/dish-egg-food-54455.jpg') no-repeat bottom center;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -254,7 +254,7 @@ header nav .login_btn:hover{
 .search{
     width: 100%;
     height: 100px;
-    background: #bfd9f2;
+    background: #1a5570;
     position: relative;
 }
 
@@ -267,7 +267,7 @@ header nav .login_btn:hover{
     outline: none;
     margin: 0;
     padding: 0;
-    background: #bfd9f2;
+    background: #1a5570;
     color: #ffffff;
     font-family: "lato-regular", Helvetica, Arial, sans-serif;
     font-size: 20px;
@@ -277,19 +277,19 @@ header nav .login_btn:hover{
 }
 
 .search #search::-webkit-input-placeholder{
-   color: #95badf;
+   color: #d3e1ea;
 }
 
 .search #search:-moz-placeholder{ 
-   color: #95badf;  
+   color: #d3e1ea;  
 }
 
 .search #search::-moz-placeholder{ 
-   color: #95badf;  
+   color: #d3e1ea;  
 }
 
 .search #search:-ms-input-placeholder{  
-   color: #95badf;  
+   color: #d3e1ea;  
 } 
 
 .search #submit_search{
@@ -329,7 +329,7 @@ header nav .login_btn:hover{
     position: absolute;
     top: 100px;
     left: 0;
-    background: #cbe0f4;
+    background: #1a5570;
     border-top: 1px solid #aac8e4;
     border-bottom: 1px solid #aac8e4;
     z-index: 9999;
@@ -357,7 +357,7 @@ header nav .login_btn:hover{
     margin: 0;
     padding: 0 20px;
     outline: none;
-    background: #cbe0f4;
+    background: #1a5570;
 }
 
 .search .advanced_search #check_in_date,
@@ -395,7 +395,7 @@ header nav .login_btn:hover{
     margin: 0;
     padding: 0 20px;
     outline: none;
-    background: #cbe0f4;
+    background: #1a5570;
 }
 
 .search .advanced_search #check_in_date,
@@ -485,7 +485,7 @@ header nav .login_btn:hover{
     top: 10px;
     left: 10px;
     padding: 15px 20px;
-    background: #ffffff;
+    background: #fff;
     color: #514d4d;
     font-family: "lato-bold", Helvetica, Arial, sans-serif;
     font-size: 16px;
@@ -517,9 +517,9 @@ header nav .login_btn:hover{
 }
 
 .listings ul li:hover .property_details{
-    border-bottom: 1px solid #95badf;
-    border-left: 1px solid #95badf;
-    border-right: 1px solid #95badf;
+    border-bottom: 1px solid #1a5570;
+    border-left: 1px solid #1a5570;
+    border-right: 1px solid #1a5570;
 }
 
 .listings ul li .property_details h1{
@@ -558,12 +558,12 @@ header nav .login_btn:hover{
 .listings .more_listing_btn{
     text-decoration: none;
     padding: 20px 40px;
-    border: 2px solid #bfd9f1;
+    border: 2px solid #28629b;
     border-radius: 30px;
     -webkit-border-radius: 30px;
     -moz-border-radius: 30px;
     -o-border-radius: 30px;
-    color: #afcbe6;
+    color: #28629b;
     font-family: "lato-regular", Helvetica, Arial, sans-serif;
     font-size: 16px;
     text-transform: uppercase;
@@ -577,8 +577,8 @@ header nav .login_btn:hover{
 }
 
 .listings .more_listing_btn:hover{
-    color: #a0c3e5;
-    border: 2px solid #a0c3e5;    
+    color: #0b2947;
+    border: 2px solid #0b2947;    
 }
 
 
@@ -593,7 +593,7 @@ header nav .login_btn:hover{
 /*  footer  */
 footer{
     padding-top: 100px;
-    background: #95badf;
+    background: #1a5570;
 }
 
 footer .footer > ul{
@@ -698,7 +698,7 @@ footer .copyrights{
     font-family: "lato-regular", Helvetica, Arial, sans-serif;
     font-size: 14px;
     letter-spacing: .5px;
-    border-top: 1px solid #82abd4;
+    border-top: 1px solid #000;
 }
 
 footer .copyrights a.ph_link{
@@ -797,7 +797,7 @@ footer .copyrights a.ph_link{
         z-index: 20;
         overflow: hidden;
         background: #fff;
-        border-top: 5px solid #bfd9f2;
+        border-top: 5px solid #fff;
     }
 
     header nav.active{
@@ -890,7 +890,7 @@ footer .copyrights a.ph_link{
         display: inline;
         margin-right: 100%;
         overflow: hidden;
-        border-top: 1px solid #82abd4;
+        border-top: 1px solid #000;
     }
 }
 
@@ -976,6 +976,6 @@ footer .copyrights a.ph_link{
     }
 
     footer .footer > ul > li.links{
-        border-bottom: 1px solid #82abd4;
+        border-bottom: 1px solid #000;
     }
-}
+}/*#82abd4*/
