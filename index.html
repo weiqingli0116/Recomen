@@ -1,0 +1,273 @@
+<!DOCTYPE HTML>
+<!--
+	Landed by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Recomen</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+	</head>
+	<body class="landing">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<header id="header">
+					<h1 id="logo"><a href="index.html">Recomen</a></h1>
+					<nav id="nav">
+						<ul>
+							<li>
+								<a href="index.html">Project Introduction</a>
+								<ul>
+									<li><a href="#one">Genral View</a></li>
+									<li><a href="right-sidebar.html">Right Sidebar</a></li>
+									<li><a href="no-sidebar.html">No Sidebar</a></li>
+									<li>
+										<a href="#">Submenu</a>
+										<ul>
+											<li><a href="#">Option 1</a></li>
+											<li><a href="#">Option 2</a></li>
+											<li><a href="#">Option 3</a></li>
+											<li><a href="#">Option 4</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<!--<li>
+								<a href="#">Project Introduction</a>
+								<ul>
+									<li><a href="left-sidebar.html">Left Sidebar</a></li>
+									<li><a href="right-sidebar.html">Right Sidebar</a></li>
+									<li><a href="no-sidebar.html">No Sidebar</a></li>
+									<li>
+										<a href="#">Submenu</a>
+										<ul>
+											<li><a href="#">Option 1</a></li>
+											<li><a href="#">Option 2</a></li>
+											<li><a href="#">Option 3</a></li>
+											<li><a href="#">Option 4</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>-->
+							<li><a href="Demo/index.html">Demo</a></li>
+							<!--<li><a href="#" class="button special">Sign Up</a></li>-->
+						</ul>
+					</nav>
+				</header>
+
+			<!-- Banner -->
+				<section id="banner">
+					<div class="content">
+						<header>
+							<h2>Restaurant Recomendation</h2>
+							<p>Care food?<br />
+							Care service?<br />
+							Care price?<br />
+							Pick a restaurant JUST FOR YOU.</p>
+						</header>
+						<span class="image"><img src="images/logo.jpg" alt="" /></span>
+					</div>
+					<a href="#one" class="goto-next scrolly">Next</a>
+				</section>
+
+			<!-- One -->
+				<section id="one" class="spotlight style1 bottom">
+					<span class="image fit main"><img src="images/2.jpg" alt="" /></span>
+					<div class="content">
+						<div class="container">
+							<div class="row">
+								<div class="4u 12u$(medium)">
+									<header>
+										<h2>A Genral View</h2>
+										<p>Represented by:<br/> Huayi Zhang<br/>Jiaming Di<br/>Weiqing Li<br/>Yingnan Han</p>
+									</header>
+								</div>
+								<div class="4u 12u$(medium)">
+									<p>We fulfilled a restaurant recommendation system based on users' preference of different aspect of a restaurant with <a href="#two">Yelp dataset</a>.<br/><br/>Firstly, we used Hierarchical Latent Tree Analysis(HLTA), it can cluster the words into several topics. Then, we labled the review sentence-wisely. If the word in one sentence is in a certain topic A, we add 1 in the count table to this review in A. This sentence's sentiment score is added in the score table to this review in A.
+									 </p>
+								</div>
+								<div class="4u$ 12u$(medium)">
+									<p>Secondly, we generated two tables which contain every restaurant's mean scores and every user's total count in these topics.<br/><br />
+									Thus, given a user_id, we could calculate every restaurant's score for him. The score is the linear combination of the socres in all topics. The weight is this user's log-scaled count. We gave out top k restaurants as recommendations.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<a href="#two" class="goto-next scrolly">Next</a>
+				</section>
+
+			<!-- Two -->
+				<section id="two" class="spotlight style2 right">
+					<span class="image fit main"><img src="images/4.jpg" alt="" /></span>
+					<div class="content">
+						<header>
+							<h2>Prepare the Dataset</h2>
+							<p>Orignially get from <a href="https://www.yelp.com/dataset/challenge">Yelp Dataset Challenge</a></p>
+						</header>
+						<p>The original dataset is 6.53 GB in total. We mainly used the review.json(4.2G) in it. When implemented in local computer, we use the first 50,000 reviews. After generated all the tables, the database is 137.8 MB.</p>
+						<ul class="actions">
+							<li><a href="database.html" class="button">Learn More</a></li>
+						</ul>
+					</div>
+					<a href="#three" class="goto-next scrolly">Next</a>
+				</section>
+
+			<!-- Three -->
+				<section id="three" class="spotlight style3 left">
+					<span class="image fit main bottom"><img src="images/1.jpg" alt="" /></span>
+					<div class="content">
+						<header>
+							<h2>Cluster all the words</h2>
+							<p>Use HLTA to get words cluster</p>
+						</header>
+						<p>We use 50,000 reviews to run the HLTA and generated the word cluster model. The words are allocated into 18 clusters.</p>
+						<ul class="actions">
+							<li><a href="cluster.html" class="button">Learn More</a></li>
+						</ul>
+					</div>
+					<a href="#four" class="goto-next scrolly">Next</a>
+				</section>
+
+			<!-- Four -->
+				<section id="four" class="spotlight style4 right">
+					<span class="image fit main"><img src="images/5.jpg" alt="" /></span>
+					<div class="content">
+						<header>
+							<h2>Build a recommendation system</h2>
+							<p>The system is like a content-based system, however we took user's  </p>
+						</header>
+						<p>Feugiat accumsan lorem eu ac lorem amet ac arcu phasellus tortor enim mi mi nisi praesent adipiscing. Integer mi sed nascetur cep aliquet augue varius tempus lobortis porttitor lorem et accumsan consequat adipiscing lorem.</p>
+						<ul class="actions">
+							<li><a href="#" class="button">Learn More</a></li>
+						</ul>
+					</div>
+					<a href="#three" class="goto-next scrolly">Next</a>
+				</section>
+
+			<!-- Five -->
+				<section id="five" class="spotlight style5 left">
+					<span class="image fit main bottom"><img src="images/3.jpg" alt="" /></span>
+					<div class="content">
+						<header>
+							<h2>Evaluate the model</h2>
+							<p>Use NDCG to compare the ranking outcome between our system and collaborative filtering.</p>
+						</header>
+						<p>Normally, our system reach an NDCG score of 0.95.</p>
+						<ul class="actions">
+							<li><a href="#" class="button">Learn More</a></li>
+						</ul>
+					</div>
+					<a href="#four" class="goto-next scrolly">Next</a>
+				</section>
+
+			<!-- Six -->
+				<section id="six" class="wrapper style1 special fade-up">
+					<div class="container">
+						<header class="major">
+							<h2>Accumsan sed tempus adipiscing blandit</h2>
+							<p>Iaculis ac volutpat vis non enim gravida nisi faucibus posuere arcu consequat</p>
+						</header>
+						<div class="box alt">
+							<div class="row uniform">
+								<section class="4u 6u(medium) 12u$(xsmall)">
+									<span class="icon alt major">
+										<div style="font-size:2.5em;color: #b8c6b1 !important;
+					text-shadow: 1px 0 0 #606060, -1px 0 0 #606060, 0 1px 0 #606060, 0 -1px 0 #606060;">
+											<i class="fab fa-python"></i>
+										</div></span>
+									<h3>Programming Laguage</h3>
+									<p>Used python for the local version. Used nltk, pandas, numpy packages for calculation. </p>
+								</section>
+								<section class="4u 6u$(medium) 12u$(xsmall)">
+									<span class="icon alt major fa-database"></span>
+									<h3>Data storage</h3>
+									<p>In local, use Sqlite3 for data storage. Also, use azure's databricks as big data computation.</p>
+								</section>
+								<section class="4u$ 6u(medium) 12u$(xsmall)">
+									<span class="icon alt major fa-code-branch"></span>
+									<h3>Version control</h3>
+									<p>Use github for version control and code share. Use google drive for document share. Plese check codes <a href =""> here.</a></p>
+								</section>
+								<!--<section class="4u 6u$(medium) 12u$(xsmall)">
+									<span class="icon alt major fa-paper-plane"></span>
+									<h3>Non semper interdum</h3>
+									<p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p>
+								</section>
+								<section class="4u 6u(medium) 12u$(xsmall)">
+									<span class="icon alt major fa-file"></span>
+									<h3>Odio laoreet accumsan</h3>
+									<p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p>
+								</section>
+								<section class="4u$ 6u$(medium) 12u$(xsmall)">
+									<span class="icon alt major fa-code"></span>
+									<h3>Massa arcu accumsan</h3>
+									<p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p>
+								</section>-->
+							</div>
+						</div>
+						<!--<footer class="major">
+							<ul class="actions">
+								<li><a href="#" class="button">Magna sed feugiat</a></li>
+							</ul>
+						</footer>-->
+					</div>
+				</section>
+
+			<!-- Seven -->
+				<section id="seven" class="wrapper style2 special fade">
+					<div class="container">
+						<header>
+							<h2>Thank you</h2>
+							<p>This is a course project for CS595. Thank you for reading. <br/>And special thanks to Professor Kyumin Lee. </p>
+						</header>
+						<!--<form method="post" action="#" class="container 50%">
+							<div class="row uniform 50%">
+								<div class="8u 12u$(xsmall)"><input type="email" name="email" id="email" placeholder="Your Email Address" /></div>
+								<div class="4u$ 12u$(xsmall)"><input type="submit" value="Get Started" class="fit special" /></div>
+							</div>
+						</form>-->
+						<footer class="major">
+							<ul class="actions">
+								<li><a href="Demo/index.html" class="button special">Get Started</a></li>
+							</ul>
+						</footer>
+					</div>
+				</section>
+
+			<!-- Footer -->
+				<footer id="footer">
+					<ul class="icons">
+						<li><a href="#" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+						<li><a href="#" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
+						<li><a href="#" class="icon alt fa-envelope"><span class="label">Email</span></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; Untitled. All rights reserved.</li>
+					</ul>
+				</footer>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
