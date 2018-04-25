@@ -1,0 +1,176 @@
+<!DOCTYPE HTML>
+<!--
+	Landed by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Recomen - evaluation</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<script src="assets/js/jquery.js" type="text/javascript"></script>
+		<script src="assets/js/math.js" type="text/javascript"></script>
+		<!-- latex css -->
+	</head>
+	<body>
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<header id="header">
+					<h1 id="logo"><a href="index.html">Recomen</a></h1>
+					<nav id="nav">
+						<ul>
+							<li>
+								<a href="index.html">Project Introduction</a>
+								<ul>
+									<li><a href="index.html#one">Genral View</a></li>
+									<li><a href="database.html">Data and pre-processing</a></li>
+									<li><a href="cluster.html">HLTA cluster</a></li>
+									<li><a href="recommendation.html">Recomen Model</a></li>
+									<li><a href="recommendation.html">Model Evaluation</a></li>
+								</ul>
+							</li>
+							<!--<li>
+								<a href="#">Project Introduction</a>
+								<ul>
+									<li><a href="left-sidebar.html">Left Sidebar</a></li>
+									<li><a href="right-sidebar.html">Right Sidebar</a></li>
+									<li><a href="no-sidebar.html">No Sidebar</a></li>
+									<li>
+										<a href="#">Submenu</a>
+										<ul>
+											<li><a href="#">Option 1</a></li>
+											<li><a href="#">Option 2</a></li>
+											<li><a href="#">Option 3</a></li>
+											<li><a href="#">Option 4</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>-->
+							<!--<li><a href="Demo/index.html">Demo</a></li>-->
+							<li><a href="Demo/index.html" class="button special">Run demo</a></li>
+						</ul>
+					</nav>
+				</header>
+
+			<!-- Main -->
+				<div id="main" class="wrapper style1">
+					<div class="container">
+						<header class="major">
+							<h2>Evaluation</h2>
+							<p>Evaluation on the restaurants a user has rated. Use NDCG to evaluate the ranking.</p>
+						</header>
+
+						<!-- Content -->
+							<section id="content">
+								<!--<a href="#" class="image fit">--><p style='text-align:center;'><img src="images/evaluation.png" alt="" /></p>
+								<h3><a href = 'https://en.wikipedia.org/wiki/Discounted_cumulative_gain'>Normalized Dicounted Cumulative Gain(NDCG)</a></h3>
+								<p>The premise of DCG is that highly relevant documents appearing lower in a search result list should be penalized as the graded relevance value is reduced logarithmically proportional to the position of the result. The discounted CG accumulated at a particular rank position <span class="math">p</span> is defined as:
+								<div class="math">DCG_p=\sum_{i=1}^p{rel_i\over log_2(i+1)}</div></p>
+								<p>When given a ground truth ranking, we could have a ideal DCG(IDCG).  For a query, the normalized discounted cumulative gain, or NDCG, is computed as:
+									<div class="math">NDCG_p = {DCG_p \over IDCG_p}</div></p>
+								<p>In our case, the new Recomen system given out a new rank. <span class="math">rel</span> is the stars one user rated on one restaurant. The ground truth ranking is a ranking sort by the stars. For one user, we only test the ranking on all the restaurants he/she has ever rated and take NDCG@last. </p>
+								<p>Considering of there is some users who have only rated several restaurants(for example 3), or they only rate 5 stars, their NDCG@last is not meaningful in evaluation. So we set an threshold n, if the user-rated restaurants are more than n restaurants and the user's rating are more than 2 kinds, we will let this user in our evaluation set.
+								<h3>Models Evaluation</h3>
+								<h4>Baseline</h4>
+								<p>For every user in our evaluation set, we calulate the NDCG@last witin a randomly shuffled ranks of all the restaurants he/she has rated. The result shows if we do nothing, what NDCG@last would we get.
+								<div style='text-align:center;'><img src="images/Baseline_50k.png" alt="" /></div></p>
+								<h4>Collabrative Filtering</h4>
+								<p>The users are selected as in the baseline. This time we test the ranks sorted by the predicting scores given by collabrative filtering. The result is showed below. Also, the speed of CF is very slow, to run the 50k database, our program runs about 450s.
+								<div style='text-align:center;'><img src="images/CF_50k.png" alt="" /></div></p>
+								<h4>Recomen</h4>
+								<p>The users are selected as before and we test the ranks sorted by the scores we get. The result is showed below. And the speed is far higher than collabrative filtering, to run the 50k database, it use about 7s.
+								<div style='text-align:center;'><img src="images/NDCG_50k.png" alt="" /></div></p>
+								<h4>Comparison</h4>
+								<div class="table-wrapper">
+									<table>
+										<thead>
+											<tr>
+												<th>Model</th>
+												<th>NDCG@last with 20 threshold</th>
+												<th>Running time (s)</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Baseline</td>
+												<td>0.924</td>
+												<td>--</td>
+											</tr>
+											<tr>
+												<td>Collabrative Filtering</td>
+												<td>0.936</td>
+												<td>453.4</td>
+											</tr>
+											<tr>
+												<td>Recomen</td>
+												<td style="font-weight: 600;">0.950</td>
+												<td style="font-weight: 600;">7.6</td>
+											</tr>
+										</tbody>
+										<tfoot>
+										</tfoot>
+									</table>
+								</div>
+								<p>Thus, our model has done a good job on recomending new restaurants to a user. Also our model is with good interpretability than a Lantent Factor Model.</p>
+								<h3>LSH Speeding</h3>
+								<p>We also apply LSH on our algorithm to speed up the search. We test it on another computer which runs a lot slowlier than the one we normly use. We run the recomendation algorithm on 20 users to see the total time.</p>
+								<table>
+										<thead>
+											<tr>
+												<th>Model</th>
+												<th>Running time (s)</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Recomen without LSH</td>
+												<td>541.24</td>
+											</tr>
+											<tr>
+												<td>Recomen with LSH</td>
+												<td>52.98</td>
+											</tr>
+										</tbody>
+										<tfoot>
+										</tfoot>
+									</table>
+							</section>
+
+					</div>
+				</div>
+
+			<!-- Footer -->
+				<footer id="footer">
+					<ul class="icons">
+						<li><a href="#" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+						<li><a href="#" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
+						<li><a href="#" class="icon alt fa-envelope"><span class="label">Email</span></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; Untitled. All rights reserved.</li>
+					</ul>
+				</footer>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
