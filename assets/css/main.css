@@ -2446,7 +2446,14 @@
 					color: #b8c6b1 !important;
 					text-shadow: 1px 0 0 #606060, -1px 0 0 #606060, 0 1px 0 #606060, 0 -1px 0 #606060;
 				}
+/* Math */
 
+	div.math img {
+		display: block;
+		margin-left:auto;
+		margin-right:auto;
+		 }
+	span.math img { border:none; vertical-align:middle; }
 /* Image */
 
 	.image {
@@ -2660,9 +2667,9 @@
 		}
 
 		table th {
-			color: #ffffff;
+			color: #606060;
 			font-size: 0.9em;
-			font-weight: 300;
+			font-weight: 400;
 			padding: 0 0.75em 0.75em 0.75em;
 			text-align: left;
 		}
